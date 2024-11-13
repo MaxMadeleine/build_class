@@ -1,3 +1,4 @@
+
 class CarModel {
   constructor(make, model, year) {
     this.make = make;
@@ -10,5 +11,5 @@ class CarModel {
   }
 }
 
-module.exports = CarModel;
+export default CarModel;
   

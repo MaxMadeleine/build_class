@@ -1,9 +1,9 @@
-const express = require('express');
+const express = import('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const CarModel = require('./assets/JS/carModel');
-const Person = require('./assets/JS/person').default;
+const CarModel = import('./assets/JS/carModel').default;
+const Person = import('./assets/JS/person').default;
 
 app.use(express.json());
 
