@@ -1,7 +1,7 @@
 {
   "name": "build_class_js",
   "version": "1.0.0",
-  "main": "carModel.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +17,8 @@
     "url": "https://github.com/MaxMadeleine/build_class_js/issues"
   },
   "homepage": "https://github.com/MaxMadeleine/build_class_js#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
 }
