@@ -12,7 +12,10 @@ export class SongModel {
       console.error(`Error: Cannot fetch songs, ${error}`);
     }
   };
-
+/**
+ *  get record 
+ * @returns array
+ */
 getRecord = async (id) => {
     try {
       const { data, error } = await supabase.from("songs").select("*").eq("id", id).single();
@@ -26,10 +29,11 @@ getRecord = async (id) => {
   };
 
 //get single record by id
-/**
+/** 
  * 
- * @returns 
  * @param {number} id
+ * @returns data object
+ * 
  */
   static getRecordById = async () => {
     try {
