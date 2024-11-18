@@ -1,28 +1,23 @@
-import express from 'express';
-import carModel from './models/carModel.js';
-import personModel from './models/personModel.js';
-
+import express from "express";
+import carModel from "./models/carModel.js";
+import personModel from "./models/personModel.js";
+import { SongModel } from "./models/songModel.js";
+import { songController } from "./controlers/songController.js";
+import { albumModel } from "./models/albumModel.js";
+import { albumController } from "./controlers/albumController.js";
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3300;
 
-app.use(express.json());
 
-app.use('/assets', express.static('assets'));
-
-app.get('/', (req, res) => {
-
-  const student = new personModel('John', 86, ' Male');
-  console.log(student.present());
-  
-  //Car Models
-  const Ford = new carModel(2019, 'Ford', 'Focus', );
-  
-  console.log(Ford.present());
-  // Other stuff
-  
-
+//route til forsiden
+app.get("/", (req, res) => {
+  res.send("velkommen");
 });
+
+app.use(songController);
+
+app.use(albumController);
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
-}); 
+});
