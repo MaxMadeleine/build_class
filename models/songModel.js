@@ -35,7 +35,7 @@ getRecord = async (id) => {
  * @returns data object
  * 
  */
-  static getRecordById = async () => {
+  static getRecordById = async id => {
     try {
       const { data, error } = await supabase
       .from("songs")

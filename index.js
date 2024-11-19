@@ -8,6 +8,9 @@ import { albumController } from "./controlers/albumController.js";
 const app = express();
 const port = process.env.PORT || 3300;
 
+app.use(express.urlencoded({ extended: true }));
+
+
 
 //route til forsiden
 app.get("/", (req, res) => {
