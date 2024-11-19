@@ -51,4 +51,24 @@ getRecord = async (id) => {
       console.error(`Error: Cannot fetch songs, ${error}`);
     }
   };
+
+  static createRecord = async formdata => {
+    try {
+      const { data, error } = await supabase
+      .from("songs")
+     .insert([{
+      title: formdata.title,
+      content: formdata.content,
+      lyrics: formdata.lyrics,
+    }]);
+
+      if (error) {
+        throw new Error(error.message);
+      }
+      return data;
+    } catch (error) {
+      console.error(`Error: Cannot fetch songs, ${error}`);
+    }
+  };
 }
+
